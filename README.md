@@ -1,4 +1,4 @@
-# claude-skills
+# ai-skills
 
 My Claude Code skills, packaged as a plugin marketplace. Each area is a plugin, so a
 project installs only what it needs.
@@ -15,12 +15,12 @@ project installs only what it needs.
 In Claude Code:
 
 ```
-/plugin marketplace add <github-user>/claude-skills      # or a local path to this repo
-/plugin install flutter@claude-skills
+/plugin marketplace add Faisalkc4u/ai-skills      # or a local path to this repo
+/plugin install flutter@ai-skills
 ```
 
 Skills from a plugin are namespaced, e.g. `/flutter:flutter-config`. Update later with
-`/plugin marketplace update claude-skills`.
+`/plugin marketplace update ai-skills`.
 
 ## Layout
 
