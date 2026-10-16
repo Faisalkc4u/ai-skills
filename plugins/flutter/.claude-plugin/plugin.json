@@ -1,0 +1,6 @@
+{
+  "name": "flutter",
+  "version": "1.0.0",
+  "description": "Flutter app setup: clean-architecture structure, config/networking, theme, routing and shared components.",
+  "author": { "name": "faisal kc" }
+}

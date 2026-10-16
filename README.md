@@ -1,21 +1,44 @@
-# Flutter skills for Claude Code
+# claude-skills
 
-Claude Code skills for setting up Flutter apps with a feature-first clean architecture.
+My Claude Code skills, packaged as a plugin marketplace. Each area is a plugin, so a
+project installs only what it needs.
 
-| Skill | What it does |
-| --- | --- |
-| `flutter-init` | Folder structure (core/ + features/), DI, bootstrap, error/result types, "add a feature" scaffold. Runs the others. |
-| `flutter-config` | Environments via `--dart-define-from-file`, typed AppConfig, flavors, Dio ApiClient + interceptors, storage, constants. |
-| `flutter-theme` | Design tokens, light/dark ThemeExtension, fonts (incl. RTL), text scale, spacing, ThemeCubit. |
-| `flutter-routing` | go_router with typed AppRoute enum, auth guard, StatefulShellRoute bottom nav, enum conventions. |
-| `flutter-components` | Shared component library (AppButton, AppTextField, AppImage, AppStatusView, …). |
+| Plugin | Area | Skills |
+| --- | --- | --- |
+| [`flutter`](plugins/flutter) | Mobile | `flutter-init`, `flutter-config`, `flutter-theme`, `flutter-routing`, `flutter-components` |
+| `backend` | Backend | _planned_ |
+| `web` | Web | _planned_ |
+| `admin` | Admin dashboards | _planned_ |
 
 ## Install
 
-Link the skills into your personal skills folder so edits here take effect right away:
+In Claude Code:
 
-```sh
-for s in skills/*; do ln -sfn "$PWD/$s" ~/.claude/skills/"$(basename "$s")"; done
+```
+/plugin marketplace add <github-user>/claude-skills      # or a local path to this repo
+/plugin install flutter@claude-skills
 ```
 
-Or copy them into a project's `.claude/skills/` to use them only there.
+Skills from a plugin are namespaced, e.g. `/flutter:flutter-config`. Update later with
+`/plugin marketplace update claude-skills`.
+
+## Layout
+
+```
+.claude-plugin/marketplace.json     # lists the plugins
+plugins/
+  <plugin>/
+    .claude-plugin/plugin.json      # name, version, description
+    skills/<skill-name>/SKILL.md    # one folder per skill
+```
+
+## Adding a plugin (e.g. backend)
+
+1. Create `plugins/backend/.claude-plugin/plugin.json` with `name`, `version`, `description`.
+2. Add skills under `plugins/backend/skills/<skill-name>/SKILL.md`.
+3. Add an entry to `plugins` in `.claude-plugin/marketplace.json`.
+
+## Adding a skill to an existing plugin
+
+Create `plugins/<plugin>/skills/<skill-name>/SKILL.md` with `name` and `description`
+frontmatter, and bump the plugin's `version` in `plugin.json`.

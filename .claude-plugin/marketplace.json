@@ -1,0 +1,15 @@
+{
+  "name": "claude-skills",
+  "owner": { "name": "faisal kc" },
+  "metadata": {
+    "description": "Personal Claude Code skills for backend, mobile, web and admin projects."
+  },
+  "plugins": [
+    {
+      "name": "flutter",
+      "source": "./plugins/flutter",
+      "description": "Flutter app setup: clean-architecture structure, config/networking, theme, routing and shared components.",
+      "category": "mobile"
+    }
+  ]
+}
